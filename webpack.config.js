@@ -1,9 +1,10 @@
 const {resolve} = require('path')
 const isProd = process.env.NODE_ENV === 'production'
+const GenerateIndexWithBundlePlugin = require('./other/webpack/generate-index-with-bundle-plugin')
 module.exports = {
   entry: './js/app.js',
   output: {
-    filename: 'bundle.js',
+    filename: 'bundle.[hash].js',
     path: resolve(__dirname, 'dist'),
     pathinfo: true,
   },
@@ -15,4 +16,7 @@ module.exports = {
       {test: /\.css$/, loader: 'style!css'},
     ],
   },
+  plugins: [
+    GenerateIndexWithBundlePlugin,
+  ]
 }
