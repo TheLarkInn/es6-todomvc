@@ -1,5 +1,5 @@
 {
-  "extends": ["kentcdodds/es-next"],
+  "extends": ["kentcdodds/react"],
   "rules": {
     // these are only here because I didn't
     // want to update the entire codebase ¯\_(ツ)_/¯
@@ -10,5 +10,8 @@
     "valid-jsdoc": 0,
     "vars-on-top": 0,
     "complexity": [2, 6],
+    "no-unused-vars": 0,
+    "react/jsx-uses-react": 2,
+    "react/prop-types": 0,
   }
 }
